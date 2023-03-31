@@ -27,7 +27,7 @@ class _IndividualPageState extends State<IndividualPage> {
             children: [
               Icon(Icons.arrow_back,
                 size: 24
-                ,)
+                ,),
               CircleAvatar(
                 child: SvgPicture.asset(
                   "assets/groups.svg",
@@ -39,26 +39,25 @@ class _IndividualPageState extends State<IndividualPage> {
 
               )
             ],
-            ],
           ),
         ),
         title: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(widget.chatmodel.name,style: TextStyle(
+            Text(widget.chatModel.name,style: TextStyle(
               fontSize: 18.5,
               fontWeight: FontWeight.bold,
             )
-            )
+            ),
             Text("last seen today at 12:05",style: TextStyle(
               fontSize: 13,
             ) ,)
-            ,]
-          ],
+            ],
+
         ),
       ) ,
-    );;
+    );
   }
 }
 
