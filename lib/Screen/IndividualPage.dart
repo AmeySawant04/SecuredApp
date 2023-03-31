@@ -41,7 +41,11 @@ class _IndividualPageState extends State<IndividualPage> {
             ],
           ),
         ),
-        title: Column(
+        title: InkWell(
+           onTap:(){},
+          child:Container(
+          margin:EdgeInsets.all(6),
+          child:Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -50,12 +54,28 @@ class _IndividualPageState extends State<IndividualPage> {
               fontWeight: FontWeight.bold,
             )
             ),
-            Text("last seen today at 12:05",style: TextStyle(
-              fontSize: 13,
+        
             ) ,)
             ],
-
+          ), 
         ),
+        ),
+        actions:[
+          IconsButton(Icons:IconIcons.videocam), onPressed:() {}),
+         IconsButton(Icons:IconIcons.Icon.call), onPressed:() {}),
+          PopupMenuButton<String>(
+            onSelected: (value){
+              print(value);
+            },
+              itemBuilder: (BuildContext context){
+            return [
+              PopupMenuItem(child: Text("View Group"), value: "View Group",),
+              PopupMenuItem(child: Text("Media,links and docs"), value: "Media,links and docs",),
+                PopupMenuItem(child: Text("Search"), value: "Search",),
+               PopupMenuItem(child: Text("Mute Notification"), value: "Mute Notification",),
+            ];
+          })
+        ],
       ) ,
     );
   }
